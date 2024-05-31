@@ -14,9 +14,18 @@ This script will split a .csv capture consisting of multiple frames into separat
 
 ### vout2png.py
 
-The script will convert a 1-frame .csv capture into a .png image.
+This script will convert a 1-frame .csv capture into a .png image.
 
 To make the resulting .png easier to view, the pixel scaling factor, horizontal stretching and vertical stretching can be set to appropriate values on the command-line.
+
+### resample.png
+
+This script will resample a high-sample-rate png to a specified pixel scaling factor and horizontal / vertical stretching, using the same parameters as vout2png.py
+
+It is mainly intended for those who wish to split the workflow of .csv -> .png conversion into two separate steps
+
+1. Convert 1-frame .csv to high-resolution .png image, with 93 samples / PPU pixel and no Y-repetition (preserves high-sample rate with low storage - difficult to view)
+2. Rescale converted .png to a more reasonable pixel size like 10x10 (lossy conversion - but allows easy viewing with an image editor)
 
 ## Example usage
 
